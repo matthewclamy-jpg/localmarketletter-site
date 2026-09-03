@@ -3,148 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Local Market Letter — your monthly market update, written and branded for you</title>
-<meta name="description" content="Every month, a two-page housing-market report for your city or county with your name and brokerage on it, plus an email-ready version and three social graphics. $29 a month. The first one is free.">
+<title>Local Market Letter</title>
+<meta name="description" content="A monthly housing-market report for your city or county with your name and brokerage on it, plus an email version and three social graphics. $29 a month. The first one is free.">
 <meta property="og:title" content="Local Market Letter">
-<meta property="og:description" content="Your monthly local market update, written and branded for you. Ready to send. $29/month, first one free.">
+<meta property="og:description" content="A monthly market report your clients will actually read. Written and branded for you. $29 a month, first one free.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.localmarketletter.com/">
+<meta property="og:image" content="https://www.localmarketletter.com/markets-example.png">
+<link rel="canonical" href="https://www.localmarketletter.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4ed8'/%3E%3Cpath d='M7 22l6-7 5 4 7-9' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#111827; --body:#374151; --muted:#5a6270; --line:#e5e7eb; --hair:#f1f2f4;
-  --brand:#1d4ed8; --brand-dk:#1739a8; --bg:#fdfdfc; --panel:#f5f6f8; --tint:#eef3ff;
-  --focus:#f59e0b; --up:#0f7b3e; --dn:#b42318;
-  --serif:Fraunces,Georgia,"Times New Roman",serif;
-  --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+  --bg:#fbfbfa; --panel:#f2f3f5; --tint:#e9f0ff;
+  --ink:#151923; --body:#3b4150; --muted:#5c6473; --line:#e2e4e8; --hair:#ecedf0;
+  --brand:#1d4ed8; --brand-ink:#ffffff; --brand-dk:#173ea8;
+  --up:#0f7b3e; --dn:#b42318; --focus:#f59e0b;
+  --shadow:0 18px 44px rgba(21,25,35,.10),0 1px 3px rgba(21,25,35,.06);
+  --r:12px;
+  --sans:Geist,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    color-scheme:dark;
+    --bg:#101318; --panel:#171b22; --tint:#15203a;
+    --ink:#f3f4f6; --body:#c9cdd6; --muted:#9aa2b1; --line:#2a2f3a; --hair:#20242d;
+    --brand:#5b8cff; --brand-ink:#0b1020; --brand-dk:#7aa2ff;
+    --shadow:0 18px 44px rgba(0,0,0,.45),0 1px 3px rgba(0,0,0,.4);
+  }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--body);font:17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
-h1,h2,h3{color:var(--ink);margin:0;letter-spacing:-.02em}
+body{margin:0;background:var(--bg);color:var(--body);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{color:var(--ink);margin:0;letter-spacing:-.02em;line-height:1.12}
+p{margin:0 0 1rem}
 a{color:var(--brand)}
+img{max-width:100%;display:block;height:auto}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
-img{max-width:100%;display:block}
-.skip{position:absolute;left:1rem;top:-4rem;background:var(--ink);color:#fff;padding:.65rem 1.1rem;border-radius:6px;z-index:50;text-decoration:none}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--ink);color:var(--bg);padding:.65rem 1.1rem;border-radius:6px;z-index:50;text-decoration:none}
 .skip:focus{top:1rem}
-.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
-.narrow{max-width:720px;margin:0 auto}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+.narrow{max-width:700px}
 
-/* nav */
-header{border-bottom:1px solid var(--hair);background:rgba(253,253,252,.9);backdrop-filter:blur(8px);position:sticky;top:0;z-index:40}
-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
-.logo{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:1.08rem;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
+.logo{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
 .logo svg{width:26px;height:26px;flex:none}
-nav ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0;align-items:center}
+nav ul{list-style:none;display:flex;gap:1.6rem;margin:0;padding:0;align-items:center}
 nav ul a{color:var(--body);text-decoration:none;font-weight:500;font-size:.95rem}
 nav ul a:hover{color:var(--ink)}
-.navcta{background:var(--brand);color:#fff !important;padding:.5rem .95rem;border-radius:7px;font-weight:600}
-.navcta:hover{background:var(--brand-dk)}
 
-/* hero */
-.hero{padding:4.5rem 0 2rem;text-align:center}
-.eyebrow{display:inline-block;background:var(--tint);color:var(--brand-dk);border-radius:999px;padding:.3rem .95rem;font-size:.85rem;font-weight:600;margin-bottom:1.4rem}
-.hero h1{font-family:var(--serif);font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.06;font-weight:600;max-width:16ch;margin:0 auto 1.2rem}
-.hero h1 em{font-style:italic;color:var(--brand)}
-.lede{font-size:1.2rem;color:var(--body);max-width:60ch;margin:0 auto 2rem}
-.cta{display:inline-block;background:var(--brand);color:#fff;padding:.95rem 1.6rem;border-radius:9px;text-decoration:none;font-weight:600;font-size:1.05rem}
-.cta:hover{background:var(--brand-dk)}
-.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:.6rem}
-.cta.ghost:hover{background:var(--panel)}
-.microcopy{font-size:.9rem;color:var(--muted);margin-top:.9rem}
-.showcase{margin:3rem auto 0;max-width:1180px;padding:0 1rem}
-.showcase img{border-radius:14px}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:.9rem 1.45rem;border-radius:9px;text-decoration:none;font-weight:600;font-size:1rem;white-space:nowrap;transition:transform .12s ease,background .15s ease}
+.btn:hover{background:var(--brand-dk)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:var(--panel)}
+.btn.sm{padding:.55rem 1rem;font-size:.92rem}
 
-/* strip */
-.strip{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--panel);padding:1.6rem 0}
-.strip .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.4rem}
-.strip b{display:block;color:var(--ink);font-size:1rem;margin-bottom:.15rem}
-.strip span{font-size:.92rem;color:var(--muted)}
+/* hero: asymmetric split */
+.hero{padding:3.5rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:3rem;align-items:center}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin-bottom:1rem}
+.hero h1{font-size:clamp(2.1rem,3.6vw,2.8rem);font-weight:700;max-width:18ch;margin-bottom:1.1rem}
+.hero .lede{font-size:1.15rem;max-width:36ch;margin-bottom:1.6rem}
+.hero .ctas{display:flex;gap:.6rem;flex-wrap:wrap}
+.hero img{border-radius:var(--r);box-shadow:var(--shadow)}
+
+.facts{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--panel);padding:1.5rem 0}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.facts b{display:block;color:var(--ink);font-weight:600;margin-bottom:.1rem}
+.facts span{font-size:.93rem;color:var(--muted)}
 
 section{padding:4.5rem 0}
-.sec-head{max-width:620px;margin-bottom:2.5rem}
-.sec-head h2{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:600;line-height:1.14;margin-bottom:.7rem}
-.sec-head p{margin:0;font-size:1.08rem}
-.kicker{font-size:.82rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--brand);margin-bottom:.6rem}
+h2{font-size:clamp(1.65rem,3vw,2.2rem);font-weight:700;margin-bottom:.8rem}
+.lead{font-size:1.08rem;max-width:58ch;margin-bottom:2.2rem}
 
-/* split */
-.split{display:grid;grid-template-columns:1fr 1.15fr;gap:3.5rem;align-items:center}
-.split.flip{grid-template-columns:1.15fr 1fr}
-.split img{border-radius:12px;box-shadow:0 16px 40px rgba(15,23,42,.1),0 1px 3px rgba(15,23,42,.06);max-height:480px;width:auto;margin-left:auto}
-.split h3{font-size:1.35rem;margin-bottom:.6rem}
-.split p{margin:0 0 1rem}
+/* what clients see: split, image left */
+.split{display:grid;grid-template-columns:1.15fr 1fr;gap:3.5rem;align-items:center}
+.split img{border-radius:var(--r);box-shadow:var(--shadow)}
+.split p:last-child{margin-bottom:0}
 
-/* deliverables */
-.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:1rem}
-.item .shot{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.1rem;margin-bottom:1.1rem;height:230px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.item .shot img{border-radius:5px;max-height:100%;width:auto;box-shadow:0 6px 18px rgba(15,23,42,.12)}
-.item h3{font-size:1.1rem;margin-bottom:.35rem}
-.item p{margin:0;font-size:.97rem;color:var(--muted)}
+/* deliverables: 1 + 2 bento */
+.bento{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto;gap:1.25rem}
+.cell{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:1.4rem;display:flex;flex-direction:column;gap:1rem}
+.cell.big{grid-row:1/3;background:var(--tint)}
+.cell .pic{border-radius:8px;overflow:hidden;box-shadow:0 8px 22px rgba(21,25,35,.12)}
+.cell.big .pic{margin-top:.25rem}
+.cell h3{font-size:1.08rem;margin-bottom:.25rem}
+.cell p{margin:0;font-size:.96rem;color:var(--muted)}
+.cell.row{flex-direction:row;align-items:center}
+.cell.row .pic{flex:0 0 150px}
 
 /* steps */
-.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:2rem}
-.steps li{counter-increment:s;position:relative;padding-top:2.9rem}
-.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:2rem;height:2rem;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center}
-.steps h3{font-size:1.05rem;margin-bottom:.35rem}
-.steps p{margin:0;font-size:.97rem;color:var(--muted)}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--line);padding-top:1rem}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font-weight:600;color:var(--brand);font-size:.9rem;margin-bottom:.5rem;font-variant-numeric:tabular-nums}
+.steps h3{font-size:1.04rem;margin-bottom:.35rem}
+.steps p{margin:0;font-size:.96rem;color:var(--muted)}
 
 /* pricing */
 #pricing{background:var(--panel);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.5rem;align-items:start}
-.plan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.8rem}
-.plan.feature{border:2px solid var(--brand);box-shadow:0 14px 34px rgba(29,78,216,.11)}
-.plan .badge{display:inline-block;background:var(--brand);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.22rem .6rem;border-radius:999px;margin-bottom:.75rem}
-.plan h3{font-size:1.15rem;margin-bottom:.4rem}
-.price{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1;margin:.5rem 0 .2rem}
-.price small{font-family:var(--sans);font-size:.95rem;color:var(--muted);font-weight:400}
-.plan>p{font-size:.97rem;color:var(--muted);margin:.3rem 0 1.1rem}
-.checks{list-style:none;padding:0;margin:0 0 1.5rem}
-.checks li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.96rem}
-.checks li::before{content:"";position:absolute;left:0;top:.5rem;width:.85rem;height:.45rem;border-left:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(-45deg)}
-.plan .cta{display:block;text-align:center;padding:.8rem 1rem;font-size:1rem}
+.plans{display:grid;grid-template-columns:1.35fr 1fr;gap:1.25rem;align-items:start}
+.plan{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem}
+.plan.main{border-color:var(--brand);padding:2rem}
+.plan h3{font-size:1.1rem;margin-bottom:.2rem}
+.price{font-size:2.5rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;margin:.35rem 0 .1rem}
+.price small{font-size:.95rem;color:var(--muted);font-weight:500;letter-spacing:0}
+.plan>p{font-size:.96rem;color:var(--muted);margin:.25rem 0 1.1rem}
+.checks{list-style:none;padding:0;margin:0 0 1.4rem;display:grid;gap:.45rem}
+.checks li{position:relative;padding-left:1.5rem;font-size:.96rem}
+.checks li::before{content:"";position:absolute;left:0;top:.52rem;width:.8rem;height:.42rem;border-left:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(-45deg)}
+.side{display:grid;gap:1.25rem}
+.side .plan{padding:1.4rem}
+.side .plan .price{font-size:1.8rem}
+.side .checks{margin-bottom:0}
+.founding{margin-top:1.4rem;font-size:.95rem;color:var(--muted)}
 
-/* letter */
-#about{background:var(--ink);color:#d6d9e0}
-#about h2{color:#fff;font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:600;margin-bottom:1.4rem}
-#about .kicker{color:#93b4ff}
-#about p{margin:0 0 1.1rem;font-size:1.06rem}
-#about strong{color:#fff;font-weight:600}
-#about a{color:#a8c4ff}
-.sign{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.16);font-size:.95rem;color:#9aa2b1}
-.sign b{color:#fff;display:block;font-family:var(--serif);font-size:1.25rem;font-weight:600;margin-bottom:.3rem}
+/* about */
+#about .box{background:var(--tint);border-radius:var(--r);padding:2.2rem;max-width:760px}
+#about p{font-size:1.05rem}
+.sign{margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
+.sign b{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:.15rem}
 
 /* faq */
-details{border-bottom:1px solid var(--line);padding:1.1rem 0}
-details summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:1.04rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
-details summary::-webkit-details-marker{display:none}
-details summary::after{content:"+";color:var(--brand);font-weight:700;font-size:1.3rem;line-height:1;flex:none}
+details{border-top:1px solid var(--line);padding:1rem 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--brand);font-weight:700;flex:none}
 details[open] summary::after{content:"\2212"}
-details p{margin:.8rem 0 0;font-size:1rem}
+details p{margin:.7rem 0 0;font-size:.98rem}
 
 /* form */
 #free{background:var(--tint)}
-form{display:grid;gap:1.1rem;max-width:520px}
-label{font-weight:600;display:block;margin-bottom:.35rem;color:var(--ink);font-size:.96rem}
-input,textarea{width:100%;font:inherit;padding:.75rem .85rem;border:1px solid #b6bcc6;border-radius:8px;background:#fff;color:var(--ink)}
-input::placeholder{color:#9aa2ad}
+form{display:grid;gap:1.05rem;max-width:520px}
+label{font-weight:600;display:block;margin-bottom:.3rem;color:var(--ink);font-size:.95rem}
+input,textarea{width:100%;font:inherit;padding:.75rem .85rem;border:1px solid #9aa2b1;border-radius:8px;background:var(--bg);color:var(--ink)}
+input::placeholder,textarea::placeholder{color:#6f7786}
 .hint{color:var(--muted);font-size:.88rem;margin:.3rem 0 0}
-button{font:inherit;font-weight:600;background:var(--brand);color:#fff;border:0;border-radius:9px;padding:.9rem 1.5rem;cursor:pointer;font-size:1.03rem;justify-self:start}
+button{font:inherit;font-weight:600;background:var(--brand);color:var(--brand-ink);border:0;border-radius:9px;padding:.9rem 1.45rem;cursor:pointer;font-size:1rem;justify-self:start;transition:transform .12s ease}
 button:hover{background:var(--brand-dk)}
+button:active{transform:translateY(1px)}
 
-footer{border-top:1px solid var(--line);padding:2.5rem 0;color:var(--muted);font-size:.92rem}
-footer .wrap{display:grid;grid-template-columns:1.6fr 1fr 1.6fr;gap:2rem}
+footer{padding:2.5rem 0;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:1.4fr .8fr 1.4fr;gap:2rem}
 footer a{color:var(--muted)}
 footer b{color:var(--ink)}
+footer p{margin:0 0 .3rem}
 
-@media (max-width:860px){
-  .split,.split.flip{grid-template-columns:1fr;gap:2rem}
-  footer .wrap{grid-template-columns:1fr}
+@media (max-width:900px){
+  .hero .wrap,.split,.bento,.plans,footer .wrap{grid-template-columns:1fr}
+  .hero{padding-top:2.5rem}
+  .hero h1{max-width:none}
+  .cell.big{grid-row:auto}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
   nav ul li:not(:last-child){display:none}
-  .cta.ghost{margin-left:0;margin-top:.7rem}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:560px){
+  .facts .wrap,.steps{grid-template-columns:1fr}
+  .cell.row{flex-direction:column;align-items:stretch}
+  .cell.row .pic{flex:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,button{transition:none}}
 </style>
 </head>
 <body>
@@ -162,7 +186,7 @@ footer b{color:var(--ink)}
         <li><a href="#how">How it works</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
-        <li><a class="navcta" href="#free">Get one free</a></li>
+        <li><a class="btn sm" href="#free">Get a free report</a></li>
       </ul>
     </nav>
   </div>
@@ -172,63 +196,58 @@ footer b{color:var(--ink)}
 
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">For real estate agents and small teams</span>
-      <h1>Your market update, written and branded <em>for you</em>.</h1>
-      <p class="lede">Every month you get a housing-market report for your city or county with your name, photo and brokerage on it — plus an email-ready version and three social graphics. You forward it. That's the whole job.</p>
-      <a class="cta" href="#free">Get this month's report free</a>
-      <a class="cta ghost" href="sample-denver-august-2026.pdf">See a real one (PDF)</a>
-      <p class="microcopy">No card. No account. Takes one line of email.</p>
-    </div>
-    <div class="showcase">
-      <img src="markets-example.png" alt="Four Local Market Letter reports fanned out, each branded for the same agent: Boise, Denver, Nashville and Raleigh, all showing August 2026 figures with headline statistics, a written summary and four charts." width="1200" height="720" fetchpriority="high">
+      <div>
+        <span class="eyebrow">For real estate agents and teams</span>
+        <h1>A monthly market report your clients will actually read.</h1>
+        <p class="lede">For your city or county, with your name and brokerage on it. Arrives finished every month. First one's free.</p>
+        <div class="ctas">
+          <a class="btn" href="#free">Get a free report</a>
+          <a class="btn ghost" href="sample-denver-august-2026.pdf">See a sample (PDF)</a>
+        </div>
+      </div>
+      <img src="markets-example.png" alt="Four reports fanned out for the same agent: Boise, Denver, Nashville and Raleigh, each showing August 2026 headline figures, a short written summary and four charts." width="1200" height="720" fetchpriority="high">
     </div>
   </section>
 
-  <div class="strip">
+  <div class="facts" aria-label="At a glance">
     <div class="wrap">
       <div><b>$29 a month</b><span>Cancel anytime. The first report is free.</span></div>
-      <div><b>Your market, not the country</b><span>Any US metro, county, or city.</span></div>
-      <div><b>Written, not just charted</b><span>Plain English your clients read.</span></div>
-      <div><b>Nothing to do</b><span>It arrives finished, every month.</span></div>
+      <div><b>Any US market</b><span>Metro, county or city.</span></div>
+      <div><b>Plain English, sourced numbers</b><span>Every figure cites where it came from.</span></div>
+      <div><b>Nothing for you to do</b><span>It shows up finished. You send it.</span></div>
     </div>
   </div>
 
   <section id="what">
     <div class="wrap">
       <div class="split">
+        <img src="email-example.png" alt="An email in an inbox from an agent to a client, subject 'Denver housing market update, August 2026', with four headline figures, two short paragraphs and the agent's signature." width="1000" height="700" loading="lazy">
         <div>
-          <p class="kicker">What your clients see</p>
-          <h2 style="font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:600;line-height:1.15;margin-bottom:.9rem">An email they actually read.</h2>
-          <p>The numbers are real, the sentences are plain, and it ends with a reason to reply. No jargon, no "the market remains dynamic," no wall of charts nobody opens.</p>
-          <p>You paste it into whatever you already use — Mailchimp, Follow Up Boss, kvCORE, or just Gmail.</p>
-          <p style="margin-bottom:0"><a href="sample-nashville-august-2026.pdf">See a Nashville report</a> &middot; <a href="sample-austin-august-2026.pdf">See an Austin one</a></p>
+          <h2>What your clients see.</h2>
+          <p>Real numbers, short sentences, and a reason to reply at the end. No "the market remains dynamic." No wall of charts nobody opens.</p>
+          <p>You paste it into whatever you already use. Mailchimp, Follow Up Boss, kvCORE, or plain Gmail.</p>
+          <p><a href="sample-nashville-august-2026.pdf">Nashville sample</a> or <a href="sample-austin-august-2026.pdf">Austin sample</a>, both PDFs.</p>
         </div>
-        <img src="email-example.png" alt="An email in an inbox: subject 'Denver housing market update — August 2026', from an agent to a client, with four headline figures, two short paragraphs of plain-English explanation, and the agent's signature block." width="1000" height="700" loading="lazy">
       </div>
     </div>
   </section>
 
   <section style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Every month, three things</p>
-        <h2>One report. Three formats. Zero work.</h2>
-      </div>
-      <div class="three">
-        <div class="item">
-          <div class="shot"><img src="sample-preview.png" alt="First page of a branded two-page PDF report showing six headline statistics and four charts." loading="lazy"></div>
-          <h3>A two-page PDF</h3>
-          <p>Your name, brokerage, licence and headshot in the header. Print it, attach it, hand it out at an open house.</p>
+      <h2>One report, three formats.</h2>
+      <p class="lead">Every month you get all three. Use one, use all of them.</p>
+      <div class="bento">
+        <div class="cell big">
+          <div><h3>A two-page PDF</h3><p>Your name, brokerage, licence number and headshot in the header. Print it, attach it, leave it at an open house.</p></div>
+          <div class="pic"><img src="sample-preview.png" alt="First page of the branded PDF report: six headline statistics, a written summary and four charts." loading="lazy"></div>
         </div>
-        <div class="item">
-          <div class="shot"><img src="email-example.png" alt="The same report as an email, ready to paste into a newsletter tool." loading="lazy"></div>
-          <h3>An email, ready to send</h3>
-          <p>Plain text and HTML, already written. Paste, add a first name, hit send.</p>
+        <div class="cell row">
+          <div class="pic"><img src="email-example.png" alt="" loading="lazy"></div>
+          <div><h3>An email, already written</h3><p>Plain text and HTML. Add a first name and send.</p></div>
         </div>
-        <div class="item">
-          <div class="shot"><img src="social-example.png" alt="A square social graphic reading 'Denver housing market, August 2026 — median listing price $574,900, down 4.2% versus last year' with the agent's name at the bottom." loading="lazy"></div>
-          <h3>Three social graphics</h3>
-          <p>1080&times;1080, headline numbers, your details. One a week keeps you on the feed.</p>
+        <div class="cell row">
+          <div class="pic"><img src="social-example.png" alt="Square social graphic: Denver housing market, August 2026, median listing price $574,900, down 4.2% from last year." loading="lazy"></div>
+          <div><h3>Three social graphics</h3><p>Square, with your name on them. One a week keeps you on the feed.</p></div>
         </div>
       </div>
     </div>
@@ -236,116 +255,99 @@ footer b{color:var(--ink)}
 
   <section id="how" style="background:var(--panel);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">How it works</p>
-        <h2>Four steps, and three of them are mine.</h2>
-      </div>
+      <h2>How it works.</h2>
+      <p class="lead">You do the first one. I do the rest, every month.</p>
       <ol class="steps">
-        <li><h3>Tell me your market</h3><p>A metro, county, or city — plus your name, brokerage, phone and licence number.</p></li>
-        <li><h3>I pull the data</h3><p>Listing figures from Realtor.com® Economic Research, closed sales from Redfin, mortgage rates from Freddie Mac.</p></li>
-        <li><h3>I write and check it</h3><p>Every number is verified against its source and the wording avoids anything that would land you in trouble.</p></li>
-        <li><h3>You send it</h3><p>It's in your inbox within three business days of each monthly data release. Reply with edits and I'll carry them forward.</p></li>
+        <li><h3>Tell me your market</h3><p>A metro, county or city, plus your name, brokerage, phone and licence number.</p></li>
+        <li><h3>I pull the data</h3><p>Listing figures from Realtor.com Economic Research, closed sales from Redfin, mortgage rates from Freddie Mac.</p></li>
+        <li><h3>I write and check it</h3><p>Every number is checked against its source. The wording stays clear of anything that could cause you trouble.</p></li>
+        <li><h3>You send it</h3><p>It lands within three business days of each monthly data release. Reply with edits and I'll carry them forward.</p></li>
       </ol>
     </div>
   </section>
 
   <section id="pricing">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Pricing</p>
-        <h2>Cheaper than the tools that leave you to write it yourself.</h2>
-        <p>Altos Research runs $79&ndash;$149 a month. Keeping Current Matters is $99.95 and talks about the national market. This is your market, written, for $29.</p>
-      </div>
+      <h2>Pricing.</h2>
+      <p class="lead">Altos Research is $79 to $149 a month. Keeping Current Matters is $99.95 and covers the national market. This is your market, written, for $29.</p>
       <div class="plans">
-        <div class="plan feature">
-          <span class="badge">Most agents</span>
+        <div class="plan main">
           <h3>Solo</h3>
-          <p class="price">$29 <small>/ month</small></p>
-          <p>One market: a metro, county, or city.</p>
+          <p class="price">$29 <small>a month</small></p>
+          <p>One market. Most agents want this one.</p>
           <ul class="checks">
             <li>Branded two-page PDF</li>
-            <li>Email-ready text and HTML</li>
+            <li>Email version, text and HTML</li>
             <li>Three social graphics</li>
-            <li>Your edits carried forward</li>
+            <li>Your edits carried forward each month</li>
             <li>Cancel anytime</li>
           </ul>
-          <a class="cta" href="#free">Start with a free report</a>
+          <a class="btn" href="#free">Get a free report</a>
+          <p class="founding">The first ten subscribers keep $19 a month for six months. Mention it when you write.</p>
         </div>
-        <div class="plan">
-          <h3>Team</h3>
-          <p class="price">$49 <small>/ month</small></p>
-          <p>Up to three markets under one brand.</p>
-          <ul class="checks">
-            <li>Everything in Solo, per market</li>
-            <li>One set of branding across all three</li>
-            <li>Cancel anytime</li>
-          </ul>
-          <a class="cta ghost" style="margin-left:0;display:block;text-align:center" href="#free">Start with a free report</a>
-        </div>
-        <div class="plan">
-          <h3>Brokerage</h3>
-          <p class="price">$149 <small>/ month</small></p>
-          <p>Up to ten agents, each with their own name on the header.</p>
-          <ul class="checks">
-            <li>Everything in Solo, per agent</li>
-            <li>One invoice for the office</li>
-            <li>Cancel anytime</li>
-          </ul>
-          <a class="cta ghost" style="margin-left:0;display:block;text-align:center" href="#free">Ask about brokerages</a>
+        <div class="side">
+          <div class="plan">
+            <h3>Team</h3>
+            <p class="price">$49 <small>a month</small></p>
+            <p>Up to three markets under one brand.</p>
+            <ul class="checks"><li>Everything in Solo, per market</li><li>One set of branding across all three</li></ul>
+          </div>
+          <div class="plan">
+            <h3>Brokerage</h3>
+            <p class="price">$149 <small>a month</small></p>
+            <p>Up to ten agents, each with their own name on the header. One invoice.</p>
+            <ul class="checks"><li>Everything in Solo, per agent</li><li>Add or swap agents any month</li></ul>
+          </div>
         </div>
       </div>
-      <p class="microcopy" style="margin-top:1.4rem">The first ten subscribers keep <strong>$19 a month for six months</strong>. Mention it when you reply.</p>
     </div>
   </section>
 
   <section id="about">
-    <div class="wrap narrow">
-      <p class="kicker">Who's behind this</p>
-      <h2>A small operation that shows its work.</h2>
-      <p>Local Market Letter is a product of <strong>Lamy AI</strong>, owned and run by <strong>Matthew Lamy</strong> in Austin, Texas. It is deliberately narrow: one report, done properly, every month, for the market you actually work.</p>
-      <p>Every figure in your report carries its source and its date, so you or your broker can check any number in about a minute. Nothing is rounded to sound better and nothing is padded to fill a page.</p>
-      <p>There are three things this report will never do. It will never estimate what a specific home is worth. It will never forecast where prices are heading. And it will never touch anything that brushes against Fair Housing. Those are your calls to make with your licence — not mine to make for you.</p>
-      <p>If something in a report is wrong, tell me. I'll fix it, resend it, and say what changed.</p>
-      <div class="sign">
-        <b>Otto</b>
-        Local Market Letter, a product of Lamy AI<br>
-        <a href="mailto:otto@localmarketletter.com">otto@localmarketletter.com</a>
+    <div class="wrap">
+      <div class="box">
+        <span class="eyebrow">Who's behind this</span>
+        <h2>A small operation that shows its work.</h2>
+        <p>Local Market Letter is a product of Lamy AI, owned and run by Matthew Lamy in Austin, Texas. It does one thing: a monthly report for the market you work, done properly.</p>
+        <p>Every figure carries its source and its date, so you or your broker can check any number in about a minute. Nothing gets rounded to sound better.</p>
+        <p>Three things a report will never do. Estimate what a specific home is worth. Forecast where prices are going. Touch anything near Fair Housing. Those are your calls to make with your licence.</p>
+        <p>If something in a report is wrong, tell me. I'll fix it, resend it, and say what changed.</p>
+        <div class="sign">
+          <b>Otto</b>
+          Local Market Letter<br>
+          <a href="mailto:otto@localmarketletter.com">otto@localmarketletter.com</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="faq">
+  <section id="faq" style="padding-top:0">
     <div class="wrap narrow">
-      <div class="sec-head" style="margin-bottom:1.5rem">
-        <p class="kicker">Questions</p>
-        <h2>The ones people ask.</h2>
-      </div>
-      <details><summary>Where does the data come from?</summary><p>Listing figures — asking prices, inventory, new listings, days on market, price cuts — come from Realtor.com® Economic Research's public data library. Closed-sale figures come from Redfin's Data Center. Mortgage rates come from Freddie Mac's weekly survey via FRED. Each report cites all three. I don't use MLS data.</p></details>
-      <details><summary>How current is it?</summary><p>Listing data for a month is published in the first days of the next month, and your report follows within three business days. Redfin's closed-sale data lags further, so I label it with its own month rather than passing it off as current.</p></details>
-      <details><summary>Can you do my ZIP code or neighborhood?</summary><p>Metro and county work everywhere. City and ZIP-level figures exist for most areas but come from smaller samples and rolling windows. I'll tell you before you subscribe whether your market has enough data to be worth sending.</p></details>
-      <details><summary>Will this pass my broker's advertising rules?</summary><p>Your licence number, brokerage name and any disclaimer text you give me go on every report, and I stay away from valuations, forecasts and anything Fair Housing–adjacent. You're still responsible for your own advertising compliance — most agents run the first one past their broker, which I'd encourage.</p></details>
-      <details><summary>Can I change the wording?</summary><p>Yes. Reply with edits and I'll apply them to your template from then on. The call-out box near the bottom of page one is yours to write however you like.</p></details>
-      <details><summary>What if I hate it?</summary><p>Don't subscribe. The first report is free precisely so you can find out before paying. If you subscribe and change your mind, email me and I'll cancel it — no form, no retention script.</p></details>
+      <h2>Questions.</h2>
+      <p class="lead">The ones agents ask before they try it.</p>
+      <details><summary>Where does the data come from?</summary><p>Listing figures (asking prices, inventory, new listings, days on market, price cuts) come from Realtor.com Economic Research's public data library. Closed-sale figures come from Redfin's Data Center. Mortgage rates come from Freddie Mac's weekly survey via FRED. Each report cites all three. No MLS data is used.</p></details>
+      <details><summary>How current is it?</summary><p>Listing data for a month is published in the first days of the next month, and your report follows within three business days. Redfin's closed-sale data lags a few months, so it's labelled with its own month rather than passed off as current.</p></details>
+      <details><summary>Can you do my ZIP code or neighborhood?</summary><p>Metro and county work everywhere. City and ZIP figures exist for most areas but come from smaller samples and rolling windows. You'll hear before you subscribe whether your market has enough data to be worth sending.</p></details>
+      <details><summary>Will this pass my broker's advertising rules?</summary><p>Your licence number, brokerage name and any disclaimer text you give me go on every report, and the writing stays away from valuations, forecasts and anything Fair Housing adjacent. You're still responsible for your own compliance. Most agents run the first one past their broker, and that's a good idea.</p></details>
+      <details><summary>Can I change the wording?</summary><p>Yes. Reply with edits and they'll apply to your template from then on. The call-out box near the bottom of page one is yours to write however you like.</p></details>
+      <details><summary>What if I don't like it?</summary><p>Don't subscribe. The first report is free so you can find out before paying. If you subscribe and change your mind, email and it's cancelled. No form, no retention script.</p></details>
     </div>
   </section>
 
   <section id="free">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Try it</p>
-        <h2>Tell me your market. I'll send this month's report in your name.</h2>
-        <p>Free, no card, no obligation. If you like it, subscribe and the next one shows up on its own.</p>
-      </div>
+      <h2>Tell me your market. I'll send this month's report in your name.</h2>
+      <p class="lead">Free, no card, no obligation. If you like it, subscribe and the next one shows up on its own.</p>
       <form id="free-form" action="https://formsubmit.co/otto@localmarketletter.com" method="POST">
-        <input type="hidden" name="_subject" value="Free report request — Local Market Letter">
+        <input type="hidden" name="_subject" value="Free report request, Local Market Letter">
         <input type="hidden" name="_captcha" value="false">
         <div><label for="market">Your market</label><input id="market" name="market" required placeholder="Denver metro, or El Paso County, CO"></div>
         <div><label for="name">Your name and brokerage</label><input id="name" name="name" required autocomplete="name" placeholder="Jordan Ellis, Example Realty Group"></div>
-        <div><label for="email">Your email</label><input id="email" name="email" type="email" required autocomplete="email"><p class="hint">Used only to send your report and reply to you. Nothing else, ever.</p></div>
-        <div><label for="notes">Anything I should know? (optional)</label><textarea id="notes" name="notes" rows="3" placeholder="Neighborhoods you focus on, your licence number, how you usually send things out…"></textarea></div>
+        <div><label for="email">Your email</label><input id="email" name="email" type="email" required autocomplete="email"><p class="hint">Used to send your report and reply to you. Nothing else.</p></div>
+        <div><label for="notes">Anything I should know? (optional)</label><textarea id="notes" name="notes" rows="3" placeholder="Neighborhoods you focus on, your licence number, how you usually send things out"></textarea></div>
         <button type="submit">Send me this month's report</button>
       </form>
-      <p class="hint" style="margin-top:1.2rem">Or just email <a href="mailto:otto@localmarketletter.com">otto@localmarketletter.com</a> with your city.</p>
+      <p class="hint" style="margin-top:1.1rem">Or email <a href="mailto:otto@localmarketletter.com">otto@localmarketletter.com</a> with your city.</p>
     </div>
   </section>
 </main>
@@ -353,18 +355,18 @@ footer b{color:var(--ink)}
 <footer>
   <div class="wrap">
     <div>
-      <b>Local Market Letter</b><br>
-      A product of Lamy AI, owned and operated by Matthew Lamy, Austin, Texas.<br>
-      518 W Laurel St #111, Fort Collins, CO 80521<br>
-      <a href="mailto:otto@localmarketletter.com">otto@localmarketletter.com</a>
+      <p><b>Local Market Letter</b></p>
+      <p>A product of Lamy AI, owned and operated by Matthew Lamy, Austin, Texas.</p>
+      <p>518 W Laurel St #111, Fort Collins, CO 80521</p>
+      <p><a href="mailto:otto@localmarketletter.com">otto@localmarketletter.com</a></p>
     </div>
     <div>
-      <a href="terms.html">Terms of service</a><br>
-      <a href="privacy.html">Privacy</a><br>
-      <a href="sample-denver-august-2026.pdf">Sample report</a>
+      <p><a href="terms.html">Terms of service</a></p>
+      <p><a href="privacy.html">Privacy</a></p>
+      <p><a href="sample-denver-august-2026.pdf">Sample report</a></p>
     </div>
     <div>
-      Reports summarize published market statistics with attribution. They are not MLS data, a valuation of any property, a forecast, or advice. Realtor.com® is a registered trademark of its owner and Redfin is a trademark of Redfin Corporation; neither endorses this service.
+      <p>Reports summarize published market statistics with attribution. They are not MLS data, a valuation of any property, a forecast, or advice. Realtor.com is a registered trademark of its owner and Redfin is a trademark of Redfin Corporation. Neither endorses this service.</p>
     </div>
   </div>
 </footer>
