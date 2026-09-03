@@ -53,7 +53,7 @@ nav ul a:hover{color:var(--ink)}
 .btn:active{transform:translateY(1px)}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn.ghost:hover{background:var(--panel)}
-.plan-actions{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}.plan .btn.ghost.sm{margin-top:.9rem}.btn.sm{padding:.55rem 1rem;font-size:.92rem}
+.btn.sm{padding:.55rem 1rem;font-size:.92rem}
 
 /* hero: asymmetric split */
 .hero{padding:3.5rem 0 2.5rem}
@@ -99,21 +99,21 @@ h2{font-size:clamp(1.65rem,3vw,2.2rem);font-weight:700;margin-bottom:.8rem}
 
 /* pricing */
 #pricing{background:var(--panel);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.plans{display:grid;grid-template-columns:1.35fr 1fr;gap:1.25rem;align-items:start}
-.plan{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem}
-.plan.main{border-color:var(--brand);padding:2rem}
-.plan h3{font-size:1.1rem;margin-bottom:.2rem}
-.price{font-size:2.5rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;margin:.35rem 0 .1rem}
+.plans{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:1rem;align-items:stretch}
+.plan{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;display:flex;flex-direction:column}
+.plan.main{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand)}
+.plan h3{font-size:1.05rem;margin:0}.plan-top{display:flex;justify-content:space-between;align-items:center;gap:.6rem;min-height:1.7rem}.badge{font-size:.78rem;font-weight:600;color:var(--brand);background:#eef3fe;border-radius:999px;padding:.25rem .65rem;text-decoration:none;white-space:nowrap}.badge:hover{text-decoration:underline}
+.price{font-size:2.4rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;margin:.7rem 0 .1rem;line-height:1.1}
 .price small{font-size:.95rem;color:var(--muted);font-weight:500;letter-spacing:0}
-.plan>p{font-size:.96rem;color:var(--muted);margin:.25rem 0 1.1rem}
-.checks{list-style:none;padding:0;margin:0 0 1.4rem;display:grid;gap:.45rem}
+.plan>p{font-size:.95rem;color:var(--muted);margin:.25rem 0 1rem}
+.checks{list-style:none;padding:0;margin:0 0 1.4rem;display:grid;gap:.45rem;flex:1}
 .checks li{position:relative;padding-left:1.5rem;font-size:.96rem}
 .checks li::before{content:"";position:absolute;left:0;top:.52rem;width:.8rem;height:.42rem;border-left:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(-45deg)}
-.side{display:grid;gap:1.25rem}
-.side .plan{padding:1.4rem}
-.side .plan .price{font-size:1.8rem}
-.side .checks{margin-bottom:0}
-.founding{margin-top:1.4rem;font-size:.95rem;color:var(--muted)}
+.btn.wide{display:block;text-align:center;margin-top:auto}.plans-note{margin-top:1.1rem;font-size:.95rem;color:var(--muted)}.plans-note a{color:var(--brand);font-weight:600}
+
+
+
+
 
 /* about */
 #about .box{background:var(--tint);border-radius:var(--r);padding:2.2rem;max-width:760px}
@@ -265,36 +265,34 @@ footer p{margin:0 0 .3rem}
       <p class="lead">Altos Research is $79 to $149 a month. Keeping Current Matters is $99.95 and covers the national market. This is your market, written, for $29.</p>
       <div class="plans">
         <div class="plan main">
-          <h3>Solo</h3>
+          <div class="plan-top"><h3>Solo</h3><a class="badge" href="https://buy.stripe.com/3cIbIU4u0dmj4cfg5G9oc04" rel="noopener">Founding rate: $19 for the first ten</a></div>
           <p class="price">$29 <small>a month</small></p>
           <p>One market. Most agents want this one.</p>
           <ul class="checks">
             <li>Branded two-page PDF</li>
             <li>Email version, text and HTML</li>
             <li>Three social graphics</li>
-            <li>Your edits carried forward each month</li>
+            <li>Price bands and property types for your market</li>
             <li>Cancel anytime</li>
           </ul>
-          <div class="plan-actions"><a class="btn" href="#free">Get a free report</a> <a class="btn ghost" href="https://buy.stripe.com/6oU8wIf8E81Z7or6v69oc03" rel="noopener">Subscribe, $29 a month</a></div>
-          <p class="founding">The first ten subscribers keep $19 a month for six months. <a href="https://buy.stripe.com/3cIbIU4u0dmj4cfg5G9oc04" rel="noopener">Take the founding rate</a> while it lasts.</p>
+          <a class="btn wide" href="https://buy.stripe.com/6oU8wIf8E81Z7or6v69oc03" rel="noopener">Subscribe</a>
         </div>
-        <div class="side">
-          <div class="plan">
-            <h3>Team</h3>
-            <p class="price">$49 <small>a month</small></p>
-            <p>Up to three markets under one brand.</p>
-            <ul class="checks"><li>Everything in Solo, per market</li><li>One set of branding across all three</li></ul>
-            <a class="btn ghost sm" href="https://buy.stripe.com/5kQ00caSo5TRdMP5r29oc05" rel="noopener">Subscribe, $49 a month</a>
-          </div>
-          <div class="plan">
-            <h3>Brokerage</h3>
-            <p class="price">$149 <small>a month</small></p>
-            <p>Up to ten agents, each with their own name on the header. One invoice.</p>
-            <ul class="checks"><li>Everything in Solo, per agent</li><li>Add or swap agents any month</li></ul>
-            <a class="btn ghost sm" href="https://buy.stripe.com/aFa14g0dKdmjgZ106I9oc06" rel="noopener">Subscribe, $149 a month</a>
-          </div>
+        <div class="plan">
+          <div class="plan-top"><h3>Team</h3></div>
+          <p class="price">$49 <small>a month</small></p>
+          <p>Up to three markets under one brand.</p>
+          <ul class="checks"><li>Everything in Solo, per market</li><li>One set of branding across all three</li></ul>
+          <a class="btn ghost wide" href="https://buy.stripe.com/5kQ00caSo5TRdMP5r29oc05" rel="noopener">Subscribe</a>
+        </div>
+        <div class="plan">
+          <div class="plan-top"><h3>Brokerage</h3></div>
+          <p class="price">$149 <small>a month</small></p>
+          <p>Up to ten agents, each with their own name on the header. One invoice.</p>
+          <ul class="checks"><li>Everything in Solo, per agent</li><li>Add or swap agents any month</li></ul>
+          <a class="btn ghost wide" href="https://buy.stripe.com/aFa14g0dKdmjgZ106I9oc06" rel="noopener">Subscribe</a>
         </div>
       </div>
+      <p class="plans-note">Every plan starts the same way: <a href="#free">get a free report</a> for your market, then subscribe if it earns its keep.</p>
     </div>
   </section>
 
