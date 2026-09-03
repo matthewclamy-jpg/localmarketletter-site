@@ -1,0 +1,8 @@
+{
+  // Static-assets-only Worker for the Local Market Letter site.
+  "name": "localmarketletter-site",
+  "compatibility_date": "2026-09-02",
+  "assets": {
+    "directory": "./"
+  }
+}
