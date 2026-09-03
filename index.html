@@ -56,13 +56,14 @@ nav ul a:hover{color:var(--ink)}
 .btn.sm{padding:.55rem 1rem;font-size:.92rem}
 
 /* hero: asymmetric split */
-.hero{padding:3.5rem 0 3rem}
-.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}
+.hero{padding:3.5rem 0 2.5rem}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:2.5rem}
+.hero .copy{max-width:640px}
 .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin-bottom:1rem}
-.hero h1{font-size:clamp(2.1rem,3.4vw,2.6rem);font-weight:700;max-width:20ch;margin-bottom:1.1rem}
-.hero .lede{font-size:1.15rem;max-width:36ch;margin-bottom:1.6rem}
+.hero h1{font-size:clamp(2.2rem,4vw,3.1rem);font-weight:700;max-width:18ch;margin-bottom:1.1rem}
+.hero .lede{font-size:1.15rem;max-width:44ch;margin-bottom:1.6rem}
 .hero .ctas{display:flex;gap:.6rem;flex-wrap:wrap}
-.hero img{border-radius:var(--r);box-shadow:var(--shadow)}
+.hero img{border-radius:var(--r);box-shadow:var(--shadow);width:100%}
 
 .facts{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--panel);padding:1.5rem 0}
 .facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
@@ -147,7 +148,7 @@ footer b{color:var(--ink)}
 footer p{margin:0 0 .3rem}
 
 @media (max-width:900px){
-  .hero .wrap,.split,.bento,.plans,footer .wrap{grid-template-columns:1fr}
+  .split,.bento,.plans,footer .wrap{grid-template-columns:1fr}
   .hero{padding-top:2.5rem}
   .hero h1{max-width:none}
   .cell.big{grid-row:auto}
@@ -188,7 +189,7 @@ footer p{margin:0 0 .3rem}
 
   <section class="hero">
     <div class="wrap">
-      <div>
+      <div class="copy">
         <span class="eyebrow">For real estate agents and teams</span>
         <h1>A market report your clients will actually read.</h1>
         <p class="lede">For your city or county, with your name and brokerage on it. Arrives finished every month. First one's free.</p>
@@ -197,7 +198,7 @@ footer p{margin:0 0 .3rem}
           <a class="btn ghost" href="sample-denver-august-2026.pdf">See a sample (PDF)</a>
         </div>
       </div>
-      <img src="markets-example.png" alt="Four reports fanned out for the same agent: Boise, Denver, Nashville and Raleigh, each showing August 2026 headline figures, a short written summary and four charts." width="1200" height="720" fetchpriority="high">
+      <img src="markets-example.png" alt="Four reports fanned out for the same agent: Boise, Denver, Nashville and Raleigh, each showing August 2026 headline figures, a short written summary and four charts." width="1400" height="760" fetchpriority="high">
     </div>
   </section>
 
