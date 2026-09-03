@@ -53,7 +53,7 @@ nav ul a:hover{color:var(--ink)}
 .btn:active{transform:translateY(1px)}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn.ghost:hover{background:var(--panel)}
-.btn.sm{padding:.55rem 1rem;font-size:.92rem}
+.plan-actions{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}.plan .btn.ghost.sm{margin-top:.9rem}.btn.sm{padding:.55rem 1rem;font-size:.92rem}
 
 /* hero: asymmetric split */
 .hero{padding:3.5rem 0 2.5rem}
@@ -275,8 +275,8 @@ footer p{margin:0 0 .3rem}
             <li>Your edits carried forward each month</li>
             <li>Cancel anytime</li>
           </ul>
-          <a class="btn" href="#free">Get a free report</a>
-          <p class="founding">The first ten subscribers keep $19 a month for six months. Mention it when you write.</p>
+          <div class="plan-actions"><a class="btn" href="#free">Get a free report</a> <a class="btn ghost" href="https://buy.stripe.com/6oU8wIf8E81Z7or6v69oc03" rel="noopener">Subscribe, $29 a month</a></div>
+          <p class="founding">The first ten subscribers keep $19 a month for six months. <a href="https://buy.stripe.com/3cIbIU4u0dmj4cfg5G9oc04" rel="noopener">Take the founding rate</a> while it lasts.</p>
         </div>
         <div class="side">
           <div class="plan">
@@ -284,12 +284,14 @@ footer p{margin:0 0 .3rem}
             <p class="price">$49 <small>a month</small></p>
             <p>Up to three markets under one brand.</p>
             <ul class="checks"><li>Everything in Solo, per market</li><li>One set of branding across all three</li></ul>
+            <a class="btn ghost sm" href="https://buy.stripe.com/5kQ00caSo5TRdMP5r29oc05" rel="noopener">Subscribe, $49 a month</a>
           </div>
           <div class="plan">
             <h3>Brokerage</h3>
             <p class="price">$149 <small>a month</small></p>
             <p>Up to ten agents, each with their own name on the header. One invoice.</p>
             <ul class="checks"><li>Everything in Solo, per agent</li><li>Add or swap agents any month</li></ul>
+            <a class="btn ghost sm" href="https://buy.stripe.com/aFa14g0dKdmjgZ106I9oc06" rel="noopener">Subscribe, $149 a month</a>
           </div>
         </div>
       </div>
